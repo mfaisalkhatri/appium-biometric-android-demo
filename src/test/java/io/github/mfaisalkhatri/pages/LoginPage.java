@@ -29,6 +29,11 @@ public class LoginPage {
         androidDriver.fingerPrint(fingerPrintId);
     }
 
+    public void performBioMetricAuthenticationOnRealDevice() {
+        fingerPrintBtn().click();
+        androidDriver.executeScript("lambda-biometric-injection=pass");
+    }
+
 
     public String getSuccessMessageTitle() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.id("android:id/alertTitle"))).getText();

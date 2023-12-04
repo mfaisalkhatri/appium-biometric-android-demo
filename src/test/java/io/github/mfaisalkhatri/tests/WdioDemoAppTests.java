@@ -20,4 +20,17 @@ public class WdioDemoAppTests extends BaseTest{
         assertEquals(loginPage.getSuccessMessageTitle(), "Success");
         assertEquals(loginPage.getSuccessMessageText(), "You are logged in!");
     }
+
+    @Test
+    public void testBiometricAuthenticationUsingLambdaTest() {
+        MainPage mainPage = new MainPage(androidDriverManager.getAndroidDriver());
+        LoginPage loginPage = mainPage.openLoginPage();
+
+        loginPage.performBioMetricAuthenticationOnRealDevice();
+
+        assertEquals(loginPage.getSuccessMessageTitle(), "Success");
+        assertEquals(loginPage.getSuccessMessageText(), "You are logged in!");
+
+
+    }
 }

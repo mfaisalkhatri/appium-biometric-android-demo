@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Mobile automation tests for Android using appium">
-    <test name="Proverbial Android App Tests">
-        <parameter name="deviceType" value="cloud"/>
+    <test name="Proverbial Android App Tests" enabled="false">
+        <parameter name="deviceType" value="local"/>
         <classes>
             <class name="io.github.mfaisalkhatri.tests.WdioDemoAppTests">
                 <methods>
@@ -11,4 +11,16 @@
             </class>
         </classes>
     </test>
+
+    <test name="Proverbial Android App Tests">
+        <parameter name="deviceType" value="cloud"/>
+        <classes>
+            <class name="io.github.mfaisalkhatri.tests.WdioDemoAppTests">
+                <methods>
+                    <include name="testBiometricAuthenticationUsingLambdaTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
 </suite> <!-- Suite -->
