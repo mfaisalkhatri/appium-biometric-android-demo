@@ -2,12 +2,13 @@ package io.github.mfaisalkhatri.tests;
 
 import io.github.mfaisalkhatri.pages.LoginPage;
 import io.github.mfaisalkhatri.pages.MainPage;
+import io.github.mfaisalkhatri.pages.instrumentation.HomePage;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
 
-public class WdioDemoAppTests extends BaseTest{
+public class BiometricAuthTests extends BaseTest {
 
 
     @Test
@@ -23,14 +24,9 @@ public class WdioDemoAppTests extends BaseTest{
 
     @Test
     public void testBiometricAuthenticationUsingLambdaTest() {
-        MainPage mainPage = new MainPage(androidDriverManager.getAndroidDriver());
-        LoginPage loginPage = mainPage.openLoginPage();
+        HomePage homePage = new HomePage(androidDriverManager.getAndroidDriver());
+        homePage.performBioMetricAuthenticationOnRealDevice();
 
-        loginPage.performBioMetricAuthenticationOnRealDevice();
-
-        assertEquals(loginPage.getSuccessMessageTitle(), "Success");
-        assertEquals(loginPage.getSuccessMessageText(), "You are logged in!");
-
-
+        assertEquals(homePage.getSuccessMessage(), "Success");
     }
 }

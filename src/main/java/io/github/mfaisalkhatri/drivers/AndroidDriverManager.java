@@ -48,13 +48,13 @@ public class AndroidDriverManager {
         ltOptions.put("platformName", "ANDROID");
         ltOptions.put("deviceName", "Galaxy S22 5G");
         ltOptions.put("platformVersion", "13");
-        ltOptions.put("app", "lt://APP10160241051701684072731928" );
-        ltOptions.put("build", "Appium biometric test suite");
-        ltOptions.put("name", "Test fingerprint authentucation on login");
+        ltOptions.put("app", "lt://APP1016033381701860877646796");
         ltOptions.put("w3c", true);
         ltOptions.put("isRealMobile", true);
         ltOptions.put("autoGrantPermissions", true);
         ltOptions.put("enableBiometricsAuthentication", true);
+        ltOptions.put("build", "Appium biometric test suite");
+        ltOptions.put("name", "Test fingerprint authentucation on login");
         ltOptions.put("plugin", "java-testNG");
         ltOptions.put("visual", true);
         ltOptions.put("console", true);
@@ -80,8 +80,6 @@ public class AndroidDriverManager {
         uiAutomator2Options = new UiAutomator2Options().setAvd("Pixel_7")
                 .setAvdLaunchTimeout(Duration.ofSeconds(300))
                 .setAvdReadyTimeout(Duration.ofSeconds(100))
-//                .setUnlockType("fingerprint")
-//                .setUnlockKey("1")
                 .setApp(APP_PATH)
                 .setAppPackage("com.wdiodemoapp")
                 .setAppActivity("com.wdiodemoapp.MainActivity")
