@@ -10,31 +10,31 @@ import java.time.Duration;
 
 public class LoginPage {
 
-    private AndroidDriver androidDriver;
-    private WebDriverWait wait;
+    private final AndroidDriver androidDriver;
+    private final WebDriverWait wait;
 
     public LoginPage(AndroidDriver androidDriver) {
 
         this.androidDriver = androidDriver;
-        wait = new WebDriverWait(androidDriver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(androidDriver, Duration.ofSeconds(10));
     }
 
 
     private WebElement fingerPrintBtn() {
-       return androidDriver.findElement(AppiumBy.accessibilityId("button-biometric"));
+       return this.androidDriver.findElement(AppiumBy.accessibilityId("button-biometric"));
     }
 
     public void performBioMetricLogin(int fingerPrintId) {
         fingerPrintBtn().click();
-        androidDriver.fingerPrint(fingerPrintId);
+        this.androidDriver.fingerPrint(fingerPrintId);
     }
 
 
     public String getSuccessMessageTitle() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.id("android:id/alertTitle"))).getText();
+        return this.wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.id("android:id/alertTitle"))).getText();
     }
 
     public String getSuccessMessageText () {
-        return androidDriver.findElement(AppiumBy.id("android:id/message")).getText();
+        return this.androidDriver.findElement(AppiumBy.id("android:id/message")).getText();
     }
 }
