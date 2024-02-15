@@ -19,7 +19,7 @@ public class BiometricAuthTests extends BaseTest {
         loginPage.performBioMetricLogin(1);
 
         assertEquals(loginPage.getSuccessMessageTitle(), "Success");
-        assertEquals(loginPage.getSuccessMessageText(), "You are logged in!");
+        assertEquals(loginPage.getSuccessMessageText(), "You are logged in through Fingerprint!");
     }
 
     @Test

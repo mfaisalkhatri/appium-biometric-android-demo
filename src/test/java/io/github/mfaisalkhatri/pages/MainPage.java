@@ -7,19 +7,19 @@ import io.appium.java_client.android.AndroidDriver;
 
 public class MainPage {
 
-    private AndroidDriver androidDriver;
+    private final AndroidDriver androidDriver;
 
     public MainPage(AndroidDriver androidDriver) {
         this.androidDriver = androidDriver;
     }
 
     public void openMenu(String menuName) {
-        androidDriver.findElement(AppiumBy.accessibilityId(menuName)).click();
+        this.androidDriver.findElement(AppiumBy.accessibilityId(menuName)).click();
     }
 
     public LoginPage openLoginPage() {
         openMenu("Login");
-        return new LoginPage(androidDriver);
+        return new LoginPage(this.androidDriver);
     }
 
 

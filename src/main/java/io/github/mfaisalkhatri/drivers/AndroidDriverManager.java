@@ -17,7 +17,7 @@ public class AndroidDriverManager {
 
     private AndroidDriver androidDriver;
     private static final String APP_PATH = String.valueOf(
-            Path.of(System.getProperty("user.dir"), "/src/test/resources/", "Android-NativeDemoWdio_App-0.4.0.apk"));
+            Path.of(System.getProperty("user.dir"), "/src/test/resources/", "android.wdio.native.app.v1.0.8.apk"));
     private static final String LT_USERNAME = System.getProperty("LT_USERNAME");
     private static final String LT_ACCESS_KEY = System.getProperty("LT_ACCESS_KEY");
     private static final String GRID_URL = "@mobile-hub.lambdatest.com/wd/hub";
@@ -54,7 +54,7 @@ public class AndroidDriverManager {
         ltOptions.put("autoGrantPermissions", true);
         ltOptions.put("enableBiometricsAuthentication", true);
         ltOptions.put("build", "Appium biometric test suite");
-        ltOptions.put("name", "Test fingerprint authentucation on login");
+        ltOptions.put("name", "Test fingerprint authentication on login");
         ltOptions.put("plugin", "java-testNG");
         ltOptions.put("visual", true);
         ltOptions.put("console", true);
@@ -77,7 +77,7 @@ public class AndroidDriverManager {
     private static UiAutomator2Options uiAutomator2Options() {
 
         final UiAutomator2Options uiAutomator2Options;
-        uiAutomator2Options = new UiAutomator2Options().setAvd("Pixel_7")
+        uiAutomator2Options = new UiAutomator2Options().setAvd("Pixel_7_API_33")
                 .setAvdLaunchTimeout(Duration.ofSeconds(300))
                 .setAvdReadyTimeout(Duration.ofSeconds(100))
                 .setApp(APP_PATH)

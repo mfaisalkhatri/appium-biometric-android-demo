@@ -13,7 +13,7 @@ public class BaseTest {
 
     @Parameters({"deviceType"})
     @BeforeClass(alwaysRun = true)
-    public void setup(String deviceType) {
+    public void setup(final String deviceType) {
         this.androidDriverManager = new AndroidDriverManager();
 
         if (deviceType.equalsIgnoreCase("LOCAL")) {
