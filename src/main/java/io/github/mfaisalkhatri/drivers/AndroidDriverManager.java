@@ -77,7 +77,7 @@ public class AndroidDriverManager {
     private static UiAutomator2Options uiAutomator2Options() {
 
         final UiAutomator2Options uiAutomator2Options;
-        uiAutomator2Options = new UiAutomator2Options().setAvd("Pixel_7_API_33")
+        uiAutomator2Options = new UiAutomator2Options().setAvd("Pixel_XL_API_33")
                 .setAvdLaunchTimeout(Duration.ofSeconds(300))
                 .setAvdReadyTimeout(Duration.ofSeconds(100))
                 .setApp(APP_PATH)
