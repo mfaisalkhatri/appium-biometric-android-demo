@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.rmi.server.ExportException;
 import java.time.Duration;
 
 public class LoginPage {
@@ -24,8 +25,13 @@ public class LoginPage {
        return this.androidDriver.findElement(AppiumBy.accessibilityId("button-biometric"));
     }
 
+    private WebElement cancelBtnInAuthenticationView() {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.accessibilityId("Tap to cancel authentication")));
+    }
+
     public void performBioMetricLogin(int fingerPrintId) {
         fingerPrintBtn().click();
+        cancelBtnInAuthenticationView().isDisplayed();
         this.androidDriver.fingerPrint(fingerPrintId);
     }
 
