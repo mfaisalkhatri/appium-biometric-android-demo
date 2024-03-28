@@ -14,7 +14,7 @@ public class LoginPage {
     private final AndroidDriver androidDriver;
     private final WebDriverWait wait;
 
-    public LoginPage(AndroidDriver androidDriver) {
+    public LoginPage(final AndroidDriver androidDriver) {
 
         this.androidDriver = androidDriver;
         this.wait = new WebDriverWait(androidDriver, Duration.ofSeconds(10));
@@ -26,10 +26,10 @@ public class LoginPage {
     }
 
     private WebElement cancelBtnInAuthenticationView() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.accessibilityId("Tap to cancel authentication")));
+        return this.wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.accessibilityId("Tap to cancel authentication")));
     }
 
-    public void performBioMetricLogin(int fingerPrintId) {
+    public void performBioMetricLogin(final int fingerPrintId) {
         fingerPrintBtn().click();
         cancelBtnInAuthenticationView().isDisplayed();
         this.androidDriver.fingerPrint(fingerPrintId);

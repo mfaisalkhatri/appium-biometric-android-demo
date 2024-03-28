@@ -8,7 +8,7 @@ public class HomePage {
 
     private final AndroidDriver androidDriver;
 
-    public HomePage(AndroidDriver androidDriver) {
+    public HomePage(final AndroidDriver androidDriver) {
         this.androidDriver = androidDriver;
     }
 

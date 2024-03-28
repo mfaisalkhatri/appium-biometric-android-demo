@@ -13,8 +13,8 @@ public class BiometricAuthTests extends BaseTest {
 
     @Test
     public void testFingerPrintAuthenticationLogin()  {
-        MainPage mainPage = new MainPage(androidDriverManager.getAndroidDriver());
-        LoginPage loginPage = mainPage.openLoginPage();
+        final MainPage mainPage = new MainPage(this.androidDriverManager.getAndroidDriver());
+        final LoginPage loginPage = mainPage.openLoginPage();
 
         loginPage.performBioMetricLogin(1);
 
@@ -24,7 +24,7 @@ public class BiometricAuthTests extends BaseTest {
 
     @Test
     public void testBiometricAuthenticationUsingLambdaTest() {
-        HomePage homePage = new HomePage(androidDriverManager.getAndroidDriver());
+        final HomePage homePage = new HomePage(this.androidDriverManager.getAndroidDriver());
         homePage.performBioMetricAuthenticationOnRealDevice();
 
         assertEquals(homePage.getSuccessMessage(), "Success");
