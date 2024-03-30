@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -47,7 +48,7 @@ public class AndroidDriverManager {
         ltOptions.put("platformName", "ANDROID");
         ltOptions.put("deviceName", "Galaxy S23");
         ltOptions.put("platformVersion", "13");
-        ltOptions.put("app", "lt://APP1016043281711621449034989");
+        ltOptions.put("app", "lt://APP1016043281711707979395880");
         ltOptions.put("w3c", true);
         ltOptions.put("isRealMobile", true);
         ltOptions.put("autoGrantPermissions", true);
@@ -62,7 +63,7 @@ public class AndroidDriverManager {
     }
 
     private DesiredCapabilities setCapabilities() {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+        final DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("lt:options", ltOptions());
         return capabilities;
     }

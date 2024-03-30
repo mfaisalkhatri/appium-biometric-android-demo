@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Mobile automation tests for Android using appium">
-    <test name="Proverbial Android App Tests" enabled="true">
+<suite name="Biometric authentication tests for Android using appium">
+    <test name="WebDriverIO Android App Biomteric Authentication Test" enabled="false">
         <parameter name="deviceType" value="local"/>
         <classes>
             <class name="io.github.mfaisalkhatri.tests.BiometricAuthTests">
@@ -12,15 +12,15 @@
         </classes>
     </test>
 
-    <test name="Proverbial Android App Tests" enabled="false">
+    <test name="Instrumentation App Biometric Authentication Tests" enabled="true">
         <parameter name="deviceType" value="cloud"/>
         <classes>
             <class name="io.github.mfaisalkhatri.tests.BiometricAuthTests">
                 <methods>
-                    <include name="testBiometricAuthenticationUsingLambdaTest"/>
+                    <include name="testSuccessfulBiometricAuthenticationUsingLambdaTest"/>
+                    <include name="testFailedBiometricAuthenticationUsingLambdaTest"/>
                 </methods>
             </class>
         </classes>
     </test>
-
-</suite> <!-- Suite -->
+</suite>

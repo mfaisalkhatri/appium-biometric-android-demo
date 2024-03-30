@@ -23,10 +23,19 @@ public class BiometricAuthTests extends BaseTest {
     }
 
     @Test
-    public void testBiometricAuthenticationUsingLambdaTest() {
+    public void testSuccessfulBiometricAuthenticationUsingLambdaTest() {
         final HomePage homePage = new HomePage(this.androidDriverManager.getAndroidDriver());
-        homePage.performBioMetricAuthenticationOnRealDevice();
+        homePage.performSuccessBioMetricAuthenticationOnRealDevice();
 
-        assertEquals(homePage.getSuccessMessage(), "Success");
+        assertEquals(homePage.getMessageText(), "Success");
     }
+
+    @Test
+    public void testFailedBiometricAuthenticationUsingLambdaTest() {
+        final HomePage homePage = new HomePage(this.androidDriverManager.getAndroidDriver());
+        homePage.performFailedBioMetricAuthenticationOnRealDevice();
+
+        assertEquals(homePage.getMessageText(), "Authentication Failed");
+    }
+
 }
