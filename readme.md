@@ -26,7 +26,7 @@ I have tried to answer the below questions by providing working code example in 
 
 - JAVA JDK 17 should be installed
 - Android Studio should be installed with an Emulator that has the biometric option configured
-- An Account should be available on [LamdaTest Cloud grid](http://www.lambdatest.com?fp_ref=faisal58) with a plan to run automated mobile tests
+- An Account should be available on [LambdaTest Cloud grid](http://www.lambdatest.com?fp_ref=faisal58) with a plan to run automated mobile tests
 
 - Run the tests using `TestNG`:
 

@@ -4,6 +4,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.remote.AutomationName;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -18,9 +19,6 @@ public class AndroidDriverManager {
     private AndroidDriver androidDriver;
     private static final String APP_PATH = String.valueOf(
             Path.of(System.getProperty("user.dir"), "/src/test/resources/", "android.wdio.native.app.v1.0.8.apk"));
-    private static final String LT_USERNAME = System.getProperty("LT_USERNAME");
-    private static final String LT_ACCESS_KEY = System.getProperty("LT_ACCESS_KEY");
-    private static final String GRID_URL = "@mobile-hub.lambdatest.com/wd/hub";
 
 
     public void createAndroidDriver() {
@@ -33,8 +31,12 @@ public class AndroidDriverManager {
     }
 
     public void createAndroidDriverInCloud() {
+        final String ltUserName = System.getenv("LT_USERNAME");
+        final String ltAccessKey = System.getenv("LT_ACCESS_KEY");
+        final String gridUrl = "@mobile-hub.lambdatest.com/wd/hub";
+
         try {
-            this.androidDriver = new AndroidDriver(new URL(format("https://{0}:{1}{2}", LT_USERNAME, LT_ACCESS_KEY, GRID_URL)), setCapabilities());
+            this.androidDriver = new AndroidDriver(new URL(format("https://{0}:{1}{2}", ltUserName, ltAccessKey, gridUrl)), setCapabilities());
         } catch (MalformedURLException e) {
             throw new Error("Error while setting up Android Driver in cloud", e);
         }
@@ -43,12 +45,10 @@ public class AndroidDriverManager {
 
     private HashMap<String, Object> ltOptions() {
         final var ltOptions = new HashMap<String, Object>();
-        ltOptions.put("username", LT_USERNAME);
-        ltOptions.put("accessKey", LT_ACCESS_KEY);
         ltOptions.put("platformName", "ANDROID");
-        ltOptions.put("deviceName", "Galaxy S22 5G");
+        ltOptions.put("deviceName", "Galaxy S23");
         ltOptions.put("platformVersion", "13");
-        ltOptions.put("app", "lt://APP1016033381701860877646796");
+        ltOptions.put("app", "lt://APP1016043281711707979395880");
         ltOptions.put("w3c", true);
         ltOptions.put("isRealMobile", true);
         ltOptions.put("autoGrantPermissions", true);
@@ -63,7 +63,7 @@ public class AndroidDriverManager {
     }
 
     private DesiredCapabilities setCapabilities() {
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+        final DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("lt:options", ltOptions());
         return capabilities;
     }
@@ -95,7 +95,6 @@ public class AndroidDriverManager {
                 .timeouts()
                 .implicitlyWait(Duration.ofSeconds(5));
     }
-
 
     public void quitDriver() {
         getAndroidDriver().quit();

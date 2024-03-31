@@ -9,11 +9,11 @@ public class MainPage {
 
     private final AndroidDriver androidDriver;
 
-    public MainPage(AndroidDriver androidDriver) {
+    public MainPage(final AndroidDriver androidDriver) {
         this.androidDriver = androidDriver;
     }
 
-    public void openMenu(String menuName) {
+    public void openMenu(final String menuName) {
         this.androidDriver.findElement(AppiumBy.accessibilityId(menuName)).click();
     }
 
@@ -21,6 +21,4 @@ public class MainPage {
         openMenu("Login");
         return new LoginPage(this.androidDriver);
     }
-
-
 }

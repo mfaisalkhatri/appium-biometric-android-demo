@@ -13,20 +13,28 @@ public class BiometricAuthTests extends BaseTest {
 
     @Test
     public void testFingerPrintAuthenticationLogin()  {
-        MainPage mainPage = new MainPage(androidDriverManager.getAndroidDriver());
-        LoginPage loginPage = mainPage.openLoginPage();
+        final MainPage mainPage = new MainPage(this.androidDriverManager.getAndroidDriver());
+        final LoginPage loginPage = mainPage.openLoginPage();
 
-        loginPage.performBioMetricLogin(1);
+        loginPage.performBiometricLogin(1);
 
         assertEquals(loginPage.getSuccessMessageTitle(), "Success");
         assertEquals(loginPage.getSuccessMessageText(), "You are logged in through Fingerprint!");
     }
 
     @Test
-    public void testBiometricAuthenticationUsingLambdaTest() {
-        HomePage homePage = new HomePage(androidDriverManager.getAndroidDriver());
-        homePage.performBioMetricAuthenticationOnRealDevice();
+    public void testSuccessfulBiometricAuthenticationUsingLambdaTest() {
+        final HomePage homePage = new HomePage(this.androidDriverManager.getAndroidDriver());
+        homePage.performSuccessBioMetricAuthenticationOnRealDevice();
 
-        assertEquals(homePage.getSuccessMessage(), "Success");
+        assertEquals(homePage.getMessageText(), "Success");
+    }
+
+    @Test
+    public void testFailedBiometricAuthenticationUsingLambdaTest() {
+        final HomePage homePage = new HomePage(this.androidDriverManager.getAndroidDriver());
+        homePage.performFailedBioMetricAuthenticationOnRealDevice();
+
+        assertEquals(homePage.getMessageText(), "Authentication Failed");
     }
 }
