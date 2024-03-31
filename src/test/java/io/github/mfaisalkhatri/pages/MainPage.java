@@ -21,6 +21,4 @@ public class MainPage {
         openMenu("Login");
         return new LoginPage(this.androidDriver);
     }
-
-
 }

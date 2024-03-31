@@ -16,7 +16,7 @@ public class BiometricAuthTests extends BaseTest {
         final MainPage mainPage = new MainPage(this.androidDriverManager.getAndroidDriver());
         final LoginPage loginPage = mainPage.openLoginPage();
 
-        loginPage.performBioMetricLogin(1);
+        loginPage.performBiometricLogin(1);
 
         assertEquals(loginPage.getSuccessMessageTitle(), "Success");
         assertEquals(loginPage.getSuccessMessageText(), "You are logged in through Fingerprint!");
@@ -37,5 +37,4 @@ public class BiometricAuthTests extends BaseTest {
 
         assertEquals(homePage.getMessageText(), "Authentication Failed");
     }
-
 }

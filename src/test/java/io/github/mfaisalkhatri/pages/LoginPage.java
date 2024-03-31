@@ -29,7 +29,7 @@ public class LoginPage {
         return this.wait.until(ExpectedConditions.visibilityOfElementLocated(AppiumBy.accessibilityId("Tap to cancel authentication")));
     }
 
-    public void performBioMetricLogin(final int fingerPrintId) {
+    public void performBiometricLogin(final int fingerPrintId) {
         fingerPrintBtn().click();
         cancelBtnInAuthenticationView().isDisplayed();
         this.androidDriver.fingerPrint(fingerPrintId);

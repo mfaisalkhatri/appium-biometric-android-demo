@@ -29,5 +29,4 @@ public class BaseTest {
     public void tearDown() {
         this.androidDriverManager.quitDriver();
     }
-
 }

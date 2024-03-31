@@ -96,7 +96,6 @@ public class AndroidDriverManager {
                 .implicitlyWait(Duration.ofSeconds(5));
     }
 
-
     public void quitDriver() {
         getAndroidDriver().quit();
     }

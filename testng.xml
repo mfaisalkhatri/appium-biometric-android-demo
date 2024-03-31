@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Biometric authentication tests for Android using appium">
-    <test name="WebDriverIO Android App Biomteric Authentication Test" enabled="false">
+    <test name="WebDriverIO Android App Biometric Authentication Test">
         <parameter name="deviceType" value="local"/>
         <classes>
             <class name="io.github.mfaisalkhatri.tests.BiometricAuthTests">
@@ -12,7 +12,7 @@
         </classes>
     </test>
 
-    <test name="Instrumentation App Biometric Authentication Tests" enabled="true">
+    <test name="Instrumentation App Biometric Authentication Tests">
         <parameter name="deviceType" value="cloud"/>
         <classes>
             <class name="io.github.mfaisalkhatri.tests.BiometricAuthTests">
