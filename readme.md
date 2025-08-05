@@ -1,5 +1,3 @@
-![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)
-
 ## Don't forget to give a :star: to make the project popular.
 
 ## :question: What is this Repository about?
@@ -38,6 +36,7 @@ I have tried to answer the below questions by providing working code example in 
 
 ## :writing_hand: Blog Links
 
+- [How to Test Biometric Authentication With Appium](https://www.lambdatest.com/blog/biometric-authentication-with-appium/)
 - [How to Choose Mobile Devices for Testing](https://medium.com/@iamfaisalkhatri/how-to-choose-mobile-devices-for-testing-pcloudy-blog-96179529d0f3)
 - [What is an Android Emulator? How to Start and use it?](https://medium.com/@iamfaisalkhatri/what-is-an-android-emulator-how-to-start-and-use-it-66fdcf52be7e)
 - [How to start Appium Server Programmatically?](https://medium.com/@iamfaisalkhatri/how-to-start-appium-server-programmatically-ec07292ab59)
@@ -55,7 +54,7 @@ I have tried to answer the below questions by providing working code example in 
 Contact me for Paid trainings related to Test Automation and Software Testing,
 mail me @`mohammadfaisalkhatri@gmail.com` or ping me on [LinkedIn](https://www.linkedin.com/in/faisalkhatri/)
 
-## :thought_balloon: Checkout the blogs related to Testing on the following links:
+## :thought_balloon: Checkout the blogs related to Software Testing and Test Automation on the following links:
 - [Medium Blogs](https://medium.com/@iamfaisalkhatri)
 - [LambdaTest Blogs](https://www.lambdatest.com/blog/author/mfaisalkhatri/)
 - [My Website](https://mfaisalkhatri.github.io)
